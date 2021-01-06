@@ -85,6 +85,87 @@ javaw.exe in your current path
 - Project Explorer View 에서 J2SE-1.5 라고 보임. JDK13으로 선택하려면,
 - pom.xml 파일 열기, 수정
 
+[pom.xml 소스 시작]
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.javastudy</groupId>
+  <artifactId>firstApp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <properties>
+    <java.version>13</java.version>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+[pom.xml 소스 끝]
+
+### Lombok
+- Maven Repository 사이트 <https://mvnrepository.com> 로 이동 
+- lombok 검색
+- Project Lombok 선택
+- 1.18.12 선택
+- Maven 텝에 있는 소스 클릭, 자동 copied to clipboard!
+- pom.xml 파일에 properties와 build 사이에 내용 추가
+[pom.xml 소스 시작]
+....
+<properties>
+.....
+</properties>
+<dependencies>
+  <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.12</version>
+      <scope>provided</scope>
+  </dependency>
+</dependencies>
+<build>
+.........
+</build>
+......
+[pom.xml 소스 끝]
+
+- Project Explorer View에서 Maven Dependencies 하단에 추가된 lombok 라이브러리가 받아져서 다운로드 된 것을 확인
+- 이클립스에서 Lombok의 기능을 사용할 수 있도록 다음 작업을 진행
+- Project Explorer에서 Maven Dependencies 아래에 있는 Lombok 파일의 경로로 DOS창 경로로 이동
+- java bin 폴더에 lombok-1.18.12.jar 파일을 복사
+- DOS cmd에서 java bin 파일 경로로 이동
+- java -jar lombok-1.18.12.jar 실행
+- Project Lombok 인스톨러가 실행되면 [Specify location..] 버튼 클릭
+- 우리가 사용하는 이클립스 실행 파일의 위치를 알려줌
+- [Install/Update] 클릭
+- 인스톨이 완료되면 인스톨러 종료 Lombok 설정 완료
+
+### Hello, Java!!
+- Navigator 에서 src > main > java로 이동
+- folder 생성 'chap01'
+- chap01 폴더에서 Ctl+N or chap01에서 context menu에서 Other...에서 Class 선택 Next
+- Name에 파일명 입력 'Sample01'
+- public static void main(String[] args) 체크
+- main 함수 내에 system.out.print("Hello World!"); 입력 
+- Alt + Shift + x 클릭 후 J 클릭
+
+### Decompiler
+- 디컴파일(Decompile)은 기계어로 컴파일된 파일을 다시 사람이 읽을 수 있는 소스코드로 변경하는 작업을 디컴파일이라고 함.
+- 이클립스의 'Help > Eclipse Marketplace..' 메뉴 선택
+- find 검색창에 decompile 검색
+- 'Enhanced Class Decompiler' [Install] 클릭
+- Install anyway 선택 후
+- restart eclipse
+- 'firstApp > target > classes > chap01 > Sample02.class' 이동 
+- 찾은 파일에서 마우스 우 클릭(context menu)에서 Open With 선택 후 Other.. 선택
+- Class Decompiler Viewer 선택, Use it for all '*.class' files 체크 후 OK, 지속적으로 연결처리 됨
+- 소스코드가 원래의 코드와 똑같이 보임.
+
 
 
 
