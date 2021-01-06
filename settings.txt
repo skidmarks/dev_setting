@@ -1,3 +1,24 @@
-*자바프로그래밍 준비
+#자바프로그래밍 준비
+> from 코드를 통해 본 빵형의 설전 JAVA
 
-** OpenJDK와 이클립스 환경 설정
+## OpenJDK와 이클립스 환경 설정
+### OpenJDK 다운로드
+- OpenJDK 15버전 다운로드 <https://jdk.java.net/15/>
+- 압축 풀기
+- 해당폴더로 이동
+### 이클립스 다운로드
+- 이클립스 다운로드 사이트 <http://www.eclipse.org/downloads/>
+- Download Package에서 다운로드 <http://www.eclipse.org/downloads/packages/>
+- Eclipse IDE for Enterprise Java Developers 다운로드
+- 해당폴더로 이동
+
+#### 개발 폴더 구조
+- MyJava
+  - IDE(eclipse)
+  - JAVA
+  - Workspace
+
+
+
+
+
