@@ -60,7 +60,10 @@ javaw.exe in your current path
 ### Project 생성하기
 - 'Create a Maven project' 선택
 - Create a simple project(skip archetype selection) 체크 후 [Next]
-> Maven은 Apache Maven이라고 하며 프로젝트를 관리, 빌드하는 도구입니다. 애플리케이션 개발에 있어서 빌드는 애플리케이션을 완성하기 위한 마지막 단계입니다. 여기서 Maven은 빌드 기능도 제공해주지만, 여기서는 라이브러리 버전 관리 정도의 기능만을 사용합니다. 지금까지 대부분 Open Source 라이브러리들을 해당 사이트에서 일일이 찾아서 다운로드한 후 직접 관리해 왔지만, Maven 기능을 이용한다면 라이브러리들을 받아오고 버전 관리까지 Maven Repository를 통해서 간편하게 할 수 있습니다.
+> Maven은 Apache Maven이라고 하며 프로젝트를 관리, 빌드하는 도구입니다. 애플리케이션 개발에 있어서 빌드는 애플리케이션을 완성하기 위한 마지막 단계입니다. 
+> 여기서 Maven은 빌드 기능도 제공해주지만, 여기서는 라이브러리 버전 관리 정도의 기능만을 사용합니다. 
+> 지금까지 대부분 Open Source 라이브러리들을 해당 사이트에서 일일이 찾아서 다운로드한 후 직접 관리해 왔지만, Maven 기능을 이용한다면 라이브러리들을 받아오고 
+> 버전 관리까지 Maven Repository를 통해서 간편하게 할 수 있습니다.
 
 - Group Id: package 명명규칙에 따라 작성 ex) org.apache.maven, org.apache.commons
 - Artifact Id: 버전 정보를 생략한 jar 파일을 이름으로, 특수문자를 사용하지 않으며 소문자로만 작성 ex) maven, commons-math
