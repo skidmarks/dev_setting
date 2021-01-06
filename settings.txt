@@ -32,10 +32,13 @@
 ### 이클립스에 JDK 연동하기
 - eclipse폴더 내 eclipse.exe 파일 실행
 > 이때, 이미 java 1.8 이상의 버전이 설치되어있다면 아무런 문제 없이 실행되겠지만, java관련하여 아무것도 설치가 되어있지 않다면 다음과 같은 메시지가 출력됩니다.
-> Eclipse : A java runtime environment(jre) or java development kit(jdk) must be available in order to run eclipse. no java virtual machine was found after searching the following locations: D:\myjava\ide\ecilpse\jre\bin\javaw.exe 
-javaw.exe in your current path
+> Eclipse : A java runtime environment(jre) or java development kit(jdk) must be available in order to run eclipse. 
+> no java virtual machine was found after searching the following locations: 
+> D:\myjava\ide\ecilpse\jre\bin\javaw.exe 
+> javaw.exe in your current path
 
-- 이러한 상환을 해결하기 위해서는 eclipse.ini 홑따옴표를 삭제합니다. 그럼 파일을 에디터로 열어서 '-vm' 옵션을 내용에 추가합니다. javaw.exe 파일 경로는 이전에 설치한 OpenJDK의 경로 하위에 bin 디렉터리에 있습니다.
+- 이러한 상환을 해결하기 위해서는 eclipse.ini 홑따옴표를 삭제합니다. 그럼 파일을 에디터로 열어서 '-vm' 옵션을 내용에 추가합니다. 
+- javaw.exe 파일 경로는 이전에 설치한 OpenJDK의 경로 하위에 bin 디렉터리에 있습니다.
 > -vm
 > C:\myjava\java\jdk-15.0.1\bin\javaw.exe
 
