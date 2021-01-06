@@ -18,6 +18,73 @@
   - JAVA
   - Workspace
 
+### JDK 압축 풀기
+- 해당 폴더에 압축 풀기
+- jdk-15.0.1
+- openjdk-15.0.1_windows-x64_bin.zip
+
+### eclipse 압축 풀기
+- 해당 폴더에 압축 풀기
+- eclipse
+- eclipse-jee-2020-12-R-win32-x86_64.zip
+
+
+### 이클립스에 JDK 연동하기
+- eclipse폴더 내 eclipse.exe 파일 실행
+> 이때, 이미 java 1.8 이상의 버전이 설치되어있다면 아무런 문제 없이 실행되겠지만, java관련하여 아무것도 설치가 되어있지 않다면 다음과 같은 메시지가 출력됩니다.
+> Eclipse : A java runtime environment(jre) or java development kit(jdk) must be available in order to run eclipse. no java virtual machine was found after searching the following locations: D:\myjava\ide\ecilpse\jre\bin\javaw.exe 
+javaw.exe in your current path
+
+- 이러한 상환을 해결하기 위해서는 eclipse.ini 홑따옴표를 삭제합니다. 그럼 파일을 에디터로 열어서 '-vm' 옵션을 내용에 추가합니다. javaw.exe 파일 경로는 이전에 설치한 OpenJDK의 경로 하위에 bin 디렉터리에 있습니다.
+> -vm
+> C:\myjava\java\jdk-15.0.1\bin\javaw.exe
+
+추가로 전체 설정 파일 내용입니다.
+> .....
+> openFile
+> --launcher.appendVmargs
+> -vm
+> C:\myjava\java\jdk-15.0.1\bin\javaw.exe
+> -vmargs
+> Dosgi.requiredJavaVersion=1.8
+> .....
+
+위의 코드가 추가되었다면 저장 후 이클립스 실행 파일을 다시 실행합니다. 
+그럼 다음과 같이 이클립스의 로고가 보이면 정상 실행 중입니다.
+
+- Workspace 디렉터리 생성하여 작업 공간 설정 후 [Launch] 버튼 클릭
+
+### Encoding 처리
+- window > preferences > General > Workspace 에서 'UTF-8' 선택 후 [Apply and Close] 클릭
+
+### Project 생성하기
+- 'Create a Maven project' 선택
+- Create a simple project(skip archetype selection) 체크 후 [Next]
+> Maven은 Apache Maven이라고 하며 프로젝트를 관리, 빌드하는 도구입니다. 애플리케이션 개발에 있어서 빌드는 애플리케이션을 완성하기 위한 마지막 단계입니다. 여기서 Maven은 빌드 기능도 제공해주지만, 여기서는 라이브러리 버전 관리 정도의 기능만을 사용합니다. 지금까지 대부분 Open Source 라이브러리들을 해당 사이트에서 일일이 찾아서 다운로드한 후 직접 관리해 왔지만, Maven 기능을 이용한다면 라이브러리들을 받아오고 버전 관리까지 Maven Repository를 통해서 간편하게 할 수 있습니다.
+
+- Group Id: package 명명규칙에 따라 작성 ex) org.apache.maven, org.apache.commons
+- Artifact Id: 버전 정보를 생략한 jar 파일을 이름으로, 특수문자를 사용하지 않으며 소문자로만 작성 ex) maven, commons-math
+- Version: 전형적인 숫자와 점 ex) 1.0, 1.1, 1.0.1 ....
+- Packaging: 패키징 종류 ex) jar, war, pom
+- [Finish] 클릭
+
+> Group Id: com.javastudy
+> Artifact Id: firstApp
+> Version: 0.0.1 -SNAPSHOT
+> Packaging: jar
+> [Finish]
+
+- 'Project Explorer' 대신 'Navigator View' 활용
+- 'Window > Show View > Other' 에서 'General > Navigator(Deprecated)' 선택
+
+- Maven 프로젝트 구조
+> /src/main/java : 자바 파일
+>          /resources : 자바 파일을 제외한 나머지 파일들(예: properties, xml 등)
+> pom.xml : Maven 빌드 설정 파일
+
+- Project Explorer View 에서 J2SE-1.5 라고 보임. JDK13으로 선택하려면,
+- pom.xml 파일 열기, 수정
+
 
 
 
